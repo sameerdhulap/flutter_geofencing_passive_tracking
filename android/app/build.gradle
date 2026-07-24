@@ -1,0 +1,45 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.woosmap_geofencing_rest_sample"
+    compileSdk = 34
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    defaultConfig {
+        applicationId = "com.example.woosmap_geofencing_rest_sample"
+        minSdk = 21
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0.0"
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
+
+dependencies {
+    // ---- Woosmap Geofencing SDK ----
+    // Needed so the Kotlin receiver can access WoosmapDb / POI classes.
+    implementation "androidx.room:room-runtime:2.+"
+    implementation "woosmap:geofencing-core-android-sdk:core_geofence_2.+"
+    implementation "com.webgeoservices.woosmapgeofencing:woosmap-mobile-sdk:4.+"
+}

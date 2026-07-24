@@ -1,0 +1,25 @@
+name: woosmap_geofencing_rest_sample
+description: "Sample: start Woosmap passiveTracking from Dart and forward geofence region events to a back-office via a native REST call."
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Woosmap Geofencing Flutter plugin.
+  # Check https://pub.dev / your internal registry for the latest version.
+  geofencing_flutter_plugin: ^0.0.7
+
+  # Used only by the sample UI to request location permission.
+  permission_handler: ^11.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
